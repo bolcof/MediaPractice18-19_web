@@ -1,0 +1,63 @@
+body {
+  margin: 60px;
+/*  IE8以下の代替の背景画像  */
+  background: black;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic";
+  font-feature-settings: "palt";
+}
+ 
+/*#video-background {*/
+/*  動画を背景に設定するスタイルシート  */
+/*  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -1000;
+}
+*/
+
+
+#youtube-movie {
+  position: fixed;
+　top: 0;
+  left: 0;
+  z-index: -1;
+　min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+ 
+#youtube-movie-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+}
+
+ 
+#youtube-movie-content iframe {
+  pointer-events: none;	/*クリックしても止まらない*/
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+h1{
+	color:white;
+	font-size:60px;
+	margin: 0.1em 0px;
+}
+
+p{
+	color:white;
+	font-size:15px;
+	line-height:1.8;
+	margin: 0.2em 0px;
+}
