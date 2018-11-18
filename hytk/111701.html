@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset = "UTF-8">
+
+	<!-- audio -->
+	<audio id="hover" preload="auto">
+		<source src="audio/hover.mp3" type="audio/mp3">
+	</audio>
+	<audio id="click" preload="auto">
+		<source src="audio/click.mp3" type="audio/mp3">
+	</audio>
+	
+	<div id="youtube-movie">
+    <div id="youtube-movie-content">
+　　　　　　<div id="youtube"></div>
+    </div>
+	</div>
+
+	<title>MEDIA PRACTICE 18-19</title>
+	<link rel="stylesheet" href="111702.css" />
+	<link rel="stylesheet" href="colorbox.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script src="jquery.colorbox-min.js"></script>
+	
+<body>
+
+<!-- <video autoplay loop poster="http://mattgrossdesign.com/raw-media/first-frame-screencap" id="video-background" muted>
+	<source src="youtuber.mp4" type="video/webm">
+	</video> -->
+
+<h1>MEDIA PRACTICE 18-19</h1>
+<p>東京藝術大学大学院映像研究科メディア映像専攻<br>修士課程修了制作展・修士一年次成果発表</p>
+</body>
+
+<br>
+<div id="mute" ><img src="img/sound_off.png" alt="control sound" height=15></div>
+
+</html>
+
+<!DOCTYPE html>
+
+<!-- ref-> https://movabletype.net/blog/2017/04/youtube-iframe-player-api.html -->
+<script>
+        
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    // YouTubeの埋め込み
+        function onYouTubeIframeAPIReady() {
+            ytPlayer = new YT.Player(
+                'youtube', // 埋め込む場所をIDで設定
+                {
+                    videoId: 'YLsLKpXJEyU', // YouTubeのIDを指定
+                    width: 1920,
+                    height: 1080,
+                    playerVars: {
+                        controls: 0,
+                        autoplay: 1,
+                        showinfo: 0,
+                    },
+                    events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                    }
+                }
+            );
+        }
+      function onPlayerReady(event) {
+        event.target.playVideo();
+        event.target.mute();
+      }
+      function onPlayerStateChange(e) {
+          var ytStatus = e.target.getPlayerState();
+          if (ytStatus == YT.PlayerState.ENDED) {
+              ytPlayer.playVideo();
+//               ytPlayer.mute();
+          }
+      }
+      
+      // mute (audio on / off)
+      $('#mute').click(function() {
+      	if(ytPlayer.isMuted()) {
+      		$(this).children("img").attr({"src":"img/sound_on.png", "height":"15"});
+      		ytPlayer.unMute();
+      	} else {
+      		$(this).children("img").attr({"src":"img/sound_off.png", "height":"15"});
+      		ytPlayer.mute();
+      	}
+      });
+      
+      // sound on 文字
+      $(function(){
+      	document.getElementById("hover").volume = 0.4;
+      	document.getElementById("click").volume = 0.4;
+      	
+      	$('#mute').hover(
+      		function(){
+      			document.getElementById("hover").currentTime = 0;
+      			document.getElementById("hover").play();
+      		}
+      	);
+      	
+      	$('#mute').click(
+      		function(){
+      			document.getElementById("click").currentTime = 0;
+      			document.getElementById("click").play();
+      		}	
+      	);
+      });
+      
+</script>
+</head>
+
+<!-- ref-> https://chocolat5.com/tips/autoplay-movie-popup/ -->
+<a href="https://www.youtube.com/embed/31hTR5c34IU?rel=0&amp;autoplay=1;" target="_blank" class="colorbox"></a>
