@@ -1,0 +1,21 @@
+body{
+  background-color: #E62766;
+ }
+
+.texts{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	display: none;
+}
+@media screen and (max-width: 320px) and (max-width: 480px) {
+  .box {
+    width: 320px;
+    height: 480px;
+  }
+}
