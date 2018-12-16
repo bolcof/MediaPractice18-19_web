@@ -54,7 +54,6 @@ $('#go_outline').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  $('moda')
   easing(document.documentElement.scrollTop/*後で*/,3600,667,
     function(value){(document.documentElement.scrollTop) = value;},
     function(){
@@ -168,7 +167,7 @@ window.onscroll=function(){
   if(scrollTop>=18000){
     scrollTop=18000;
   }
-  var ret = ( '0000' +  Math.round(scrollTop/20)).slice( -4 );
+  var ret = ( '0000' +  Math.round(scrollTop/19)).slice( -4 );
   var filename = './images/anim/gateAnim_' + ret + '.png';
   $('#Anim').attr('src',filename);
   if(!isButtonScrolling){
@@ -185,7 +184,7 @@ window.onscroll=function(){
         videoControl("pauseVideo");
         isPlaying = false;
       }
-    }else if(exScrPoint>=2100 && exScrPoint<=4600){
+    }else if(exScrPoint>=2100 && exScrPoint<=5100){
       if(scrollTop<=2100 || scrollTop>=4600){
         $('#modal-about').fadeOut(500);
       }
