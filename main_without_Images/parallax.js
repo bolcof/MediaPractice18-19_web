@@ -168,7 +168,7 @@ window.onscroll=function(){
   if(scrollTop>=18000){
     scrollTop=18000;
   }
-  var ret = ( '000' +  Math.round(scrollTop/20)).slice( -3 );
+  var ret = ( '0000' +  Math.round(scrollTop/20)).slice( -4 );
   var filename = './images/anim/gateAnim_' + ret + '.png';
   $('#Anim').attr('src',filename);
   if(!isButtonScrolling){
