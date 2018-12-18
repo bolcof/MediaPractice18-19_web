@@ -700,8 +700,6 @@ a.hover {
 	max-height: 100%;
 	overflow:scroll;
 }
-
-/*ぶっ殺す*/
 .section_contents::-webkit-scrollbar {
   display: none;
 }
@@ -979,15 +977,15 @@ a.hover {
 #container .bottom_wrapper .base-modal #access {
 	border-bottom: hidden;
 	padding-bottom: 8%;
+	height: 100%;
 }
 #container .bottom_wrapper .base-modal #access #access_section {
 	position: relative;
 	width: 96%;
-
+	height: 100%;
 }
 #container .bottom_wrapper .base-modal #access .section_contents .access_wrapper {
 	position: relative;
-	border: 1px solid white;
 	margin: auto;
 	width: 99%;
 	height: 99%;
@@ -997,18 +995,19 @@ a.hover {
 	width: 44%;
 	padding-left: 4%;
 	padding-right: 2%;
-	height: 400px;
-	margin-top: 3%;
+	height: 70%;
+	margin: 0;
+	vertical-align: middle;
 	display: inline-block;
 }
 #container .bottom_wrapper .base-modal #access .section_contents .access_wrapper #access_text {
-	position: relative;
+	position: fixed;
 	width: 44%;
 	padding-left: 2%;
 	padding-right: 4%;
 	height: 400px;
-	margin-top: 3%;
-	vertical-align: top;
+	margin: 0;
+	vertical-align: middle;
 	display: inline-block;
 }
 #container .bottom_wrapper .base-modal .access .section_contents .access_wrapper #access_map .mapInfo {
