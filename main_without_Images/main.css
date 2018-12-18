@@ -29,20 +29,28 @@ header, video{
 header{
 	display: block;
 }
-/*
-header *{
-	z-index: 99999;
-	position: fixed;
-}
-*/
+
 header #logo{
 	position: absolute;
-	top: 20px;
-	left: 20px;
+	top: 22.5px;
+	left: 22.5px;
+}
+header #logo2{
+	position: absolute;
+	bottom: 22.5px;
+	left: 22.5px;
 }
 
 header #logo img {
-	width: 380px;
+	display: inline-block;
+	height: 60px;
+	z-index: 9999;
+}
+
+header #logo2 img {
+	display: inline-block;
+	height: 60px;
+	z-index: 9999;
 }
 
 header ul{
@@ -138,7 +146,7 @@ a.hover {
 	#modal #modal_wrapper #close_button {
 		top: 2%;
 		margin-left: 30%;
-		margin-button: 5%;
+		margin-bottom: : 5%;
 	}
 }
 
@@ -150,6 +158,7 @@ a.hover {
 	display: none;
 	position: relative;
 	width: 30%;
+	height: 70vh;
 	padding: 5%;
 	margin: 0 auto;
 	text-align: center;
@@ -170,6 +179,12 @@ a.hover {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	max-height: 100%;
+	max-height: 90vh;
+	overflow: scroll;
+}
+.single_member_contents::-webkit-scrollbar {
+  display: none;
 }
 
 #modal #modal_wrapper .single_member_wrapper .single_member_contents .exhi_modal_img{
@@ -195,6 +210,14 @@ a.hover {
 		position: relative;
 		width: 100%;
 	}
+}
+
+.caption{
+	color: black;
+	text-align: right;
+	font-size: 0.8vw;
+	padding-top: 2px;
+	padding-bottom: 8px;
 }
 
 #modal #modal_wrapper .single_member_wrapper .single_member_contents .exhi_modal_info {
@@ -1010,9 +1033,9 @@ a.hover {
 #container footer #copyright {
 	position: fixed;
 	right: 2%;
-	bottom: 5%;
+	bottom: 22.5px;
 	font-style: italic;
-	font-size: 0.8em;
+	font-size: 1em;
 }
 @media only screen and (max-width: 768px) and (orientation: portrait) {
 	#container footer #copyright {
@@ -1090,7 +1113,7 @@ a.hover {
 	position: fixed;
 	display: block;
 	width: 80%;
-	height: 80%;
+	height: 70%;
 	top: 0;
 	bottom: 0;
 	left: 0;

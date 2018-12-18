@@ -1,14 +1,15 @@
-
+var modalOpened = false;
 
 function modalOpen(){
 
   var str;
   var scrollTop;
 
-//////////outline
-//////////////////////////////////////////////////////////////////////////
-$(".single_member").click(function(){ //modalopen
+  //////////outline
+  //////////////////////////////////////////////////////////////////////////
+  $(".single_member").click(function(){ //modalopen
   // event.preventDefault();
+  modalOpened = true;
   $(window).trigger('resize')
 
   arguments.callee.caller.arguments[0].preventDefault();
@@ -28,32 +29,34 @@ $(".single_member").click(function(){ //modalopen
   //     if(debug) alert("#"+this+"_text->hide");
   // });
 
-//    id = $(this).attr("id");
-//    show = sections[id];
-//    if(debug) alert("1 : modalopen: clicked id(key)="+id+" value:"+show);
-//     $("#contents_container").show();
-//     $("#close_button").fadeIn();
-//     $("#modal_overlay").fadeIn();
-//
-// $("#" + show + "_text").fadeIn();
-// if(debug) alert("3: #"+show+"_text -> show");
+  //    id = $(this).attr("id");
+  //    show = sections[id];
+  //    if(debug) alert("1 : modalopen: clicked id(key)="+id+" value:"+show);
+  //     $("#contents_container").show();
+  //     $("#close_button").fadeIn();
+  //     $("#modal_overlay").fadeIn();
+  //
+  // $("#" + show + "_text").fadeIn();
+  // if(debug) alert("3: #"+show+"_text -> show");
 });
-$('.single_member_wrapper').unbind().click(function() {
+  $('.single_member_wrapper').unbind().click(function() {
     // event.stopPropagation();
     //console.log("single-member-wrapper clicked");
     arguments.callee.caller.arguments[0].stopPropagation();
-});
+  });
 
-$("#close_button, #modal").unbind().click(function(){
+  $("#close_button, #modal").unbind().click(function(){
     console.log("close-button clicked. scrollTop:"+scrollTop);
+    modalOpened = false;
     //finish no scroll state
     //$('html,body').removeClass('noscroll').scrollTop(scrollTop);
     $("#modal").fadeOut();
     $("#"+String(str)+"_info").css("display","none");
-});
-
-
+  });
 }
 
+function getModalOpened(){
+  return modalOpened;
+}
 
 $(function(){modalOpen()});

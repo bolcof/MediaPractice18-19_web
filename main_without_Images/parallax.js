@@ -1,4 +1,5 @@
 document.write("<script type='text/javascript' src='easing.js'></script>");
+document.write("<script type='text/javascript' src='modal.js'></script>");
 
 jQuery(document).ready(function() {
 
@@ -164,6 +165,13 @@ window.onscroll=function(){
   var scrollTop =
   document.documentElement.scrollTop || // IE、Firefox、Opera
   document.body.scrollTop;
+
+  if(getModalOpened()){
+    document.documentElement.scrollTop=exScrPoint;
+    ocument.body.scrollTop=exScrPoint;
+    scrollTop=exScrPoint;
+  }
+
   if(scrollTop>=18000){
     scrollTop=18000;
   }
@@ -253,26 +261,17 @@ $(window).on('resize', function(){
 function scr(){
   var x = document.body.scrollLeft || document.documentElement.scrollLeft;
   var y = document.body.scrollTop || document.documentElement.scrollTop;
-//IE, Firefox, Opera
-//chrome, safari
-alert("横" + x + "px，縦" + y + "px");
+  //IE, Firefox, Opera
+  //chrome, safari
+  alert("横" + x + "px，縦" + y + "px");
 
 
-var width = $(window).width();
+  var width = $(window).width();
 	var height = $(window).height(); // jQuery
 	alert("width=" + width + "\n" + "height="+height);
 }
 
-
 function videoControl(action){ 
   var $playerWindow = $('#movie-content')[0].contentWindow;
   $playerWindow.postMessage('{"event":"command","func":"'+action+'","args":""}', '*');
-}
-
-function appearModal(modal_id){
-  easing(0.0,1.0,500,
-    function(opacity){
-      $(modal_id).css("opacity",opacity);
-    },
-    function(){});
 }
