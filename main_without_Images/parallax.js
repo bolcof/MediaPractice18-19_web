@@ -29,17 +29,20 @@ $('.go_top').click(function(){
           },
           function(){
             $('#movie').fadeIn();
-            videoControl("playVideo");
+            // videoControl("playVideo");
+            // $('#movie-content').seekTo(0,true);
           });
+        $('#allow_img').hide();
         isPlaying=true;
         isButtonScrolling = false;
       }
     });
 });
 
-$('#go_outline').click(function(){
+$('.go_outline').click(function(){
   console.log("go outline");
   isButtonScrolling = true;
+  $('#allow_img').hide();
   $('#modal-info').fadeOut(500);
   $('#modal-exhibitors').fadeOut(500);
   $('#modal-access').fadeOut(500);
@@ -55,7 +58,7 @@ $('#go_outline').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  easing(document.documentElement.scrollTop/*後で*/,3600,667,
+  easing(document.documentElement.scrollTop/*後で*/,2250,667,
     function(value){(document.documentElement.scrollTop) = value;},
     function(){
       $('#modal-about').fadeIn(500);
@@ -81,7 +84,7 @@ $('#go_information').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  easing(document.documentElement.scrollTop/*後で*/,7200,667,
+  easing(document.documentElement.scrollTop/*後で*/,4250,667,
     function(value){(document.documentElement.scrollTop) = value;},
     function(){
       $('#modal-info').fadeIn(500);
@@ -107,7 +110,7 @@ $('#go_exhibitors').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  easing(document.documentElement.scrollTop/*後で*/,10800,667,
+  easing(document.documentElement.scrollTop/*後で*/,6500,667,
     function(value){(document.documentElement.scrollTop) = value;},
     function(){
       /*outlineをフェードイン*/
@@ -116,7 +119,7 @@ $('#go_exhibitors').click(function(){
     });
 });
 
-$('#go_access').click(function(){
+$('.go_access').click(function(){
   console.log("go access");
   isButtonScrolling = true;
   $('#modal-about').fadeOut(500);
@@ -134,7 +137,7 @@ $('#go_access').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  easing(document.documentElement.scrollTop/*後で*/,14400,667,
+  easing(document.documentElement.scrollTop/*後で*/,8750,667,
     function(value){(document.documentElement.scrollTop) = value;},
     function(){
       $('#modal-access').fadeIn(500);
@@ -155,6 +158,8 @@ $(window).click(function(){
       },
       function(){
         $('#movie').fadeOut(667);
+        $('#allow_img').show();
+        setTimeout('allow_move()');
       });
     videoControl("pauseVideo");
     isPlaying = false;
@@ -171,16 +176,23 @@ window.onscroll=function(){
     ocument.body.scrollTop=exScrPoint;
     scrollTop=exScrPoint;
   }
-
-  if(scrollTop>=17100){
-    scrollTop=17100;
+  // console.log(scrollTop);
+  if(scrollTop>=10800){
+    scrollTop=10800;
   }
-  var ret = ( '0000' +  Math.round(scrollTop/19)).slice( -4 );
+  var ret = ( '0000' + Math.round(scrollTop/12)).slice( -4 );
   var filename = './images/anim/gateAnim_' + ret + '.png';
   $('#Anim').attr('src',filename);
   if(!isButtonScrolling){
-    if(exScrPoint<=1500){
-      if(scrollTop>=1500){
+
+    if(exScrPoint<=500){
+      if(scrollTop>=500){
+        $('#allow_img').fadeOut(333);
+      }
+    }
+
+    if(exScrPoint<=900){
+      if(scrollTop>=900){
         easing(0.15,1.0,333,
           function(opacity){
             $("#Anim")
@@ -192,26 +204,26 @@ window.onscroll=function(){
         videoControl("pauseVideo");
         isPlaying = false;
       }
-    }else if(exScrPoint>=2100 && exScrPoint<=5100){
-      if(scrollTop<=2100 || scrollTop>=4600){
+    }else if(exScrPoint>=1550 && exScrPoint<=2950){
+      if(scrollTop<=1550 || scrollTop>=2950){
         $('#modal-about').fadeOut(500);
       }
-    }else if(exScrPoint>=5700 && exScrPoint<=8700){
-      if(scrollTop<=5700 || scrollTop>=8700){
+    }else if(exScrPoint>=3550 && exScrPoint<=4950){
+      if(scrollTop<=3550 || scrollTop>=4950){
         $('#modal-info').fadeOut(500);
       }
-    }else if(exScrPoint>=9300 && exScrPoint<=12300){
-      if(scrollTop<=9300 || scrollTop>=12300){
+    }else if(exScrPoint>=5550 && exScrPoint<=7450){
+      if(scrollTop<=5550 || scrollTop>=7450){
         $('#modal-exhibitors').fadeOut(500);
       }
-    }else if(exScrPoint>=12900 && exScrPoint<=15900){
-      if(scrollTop<=12900 || scrollTop>=15900){
+    }else if(exScrPoint>=8050 && exScrPoint<=9450){
+      if(scrollTop<=8050 || scrollTop>=9450){
         $('#modal-access').fadeOut(500);
       }
     }
 
-    if(exScrPoint>=1500){
-      if(scrollTop<=1500){
+    if(exScrPoint>=900){
+      if(scrollTop<=900){
         easing(1.0,0.15,333,
           function(opacity){
             $("#Anim")
@@ -219,28 +231,29 @@ window.onscroll=function(){
           },
           function(){
             $('#movie').fadeIn();
-            videoControl("playVideo");
+            // videoControl("playVideo");
+            // $('#movie-content').seekTo(0,true);
           });
         isPlaying = true;
       }
     }
-    if(exScrPoint<=2100 || exScrPoint>=4600){
-      if(scrollTop>=2100 && scrollTop<=4600){
+    if(exScrPoint<=1550 || exScrPoint>=2950){
+      if(scrollTop>=1550 && scrollTop<=2950){
         $('#modal-about').fadeIn(500);
       }
     }
-    if(exScrPoint<=5700 || exScrPoint>=8700){
-      if(scrollTop>=5700 && scrollTop<=8700){
+    if(exScrPoint<=3550 || exScrPoint>=4950){
+      if(scrollTop>=3550 && scrollTop<=4950){
         $('#modal-info').fadeIn(500);
       }
     }
-    if(exScrPoint<=9300 || exScrPoint>=12300){
-      if(scrollTop>=9300 && scrollTop<=12300){
+    if(exScrPoint<=5550 || exScrPoint>=7450){
+      if(scrollTop>=5550 && scrollTop<=7450){
         $('#modal-exhibitors').fadeIn(500);
       }
     }
-    if(exScrPoint<=12900 || exScrPoint>=15900){
-      if(scrollTop>=12900 && scrollTop<=15900){
+    if(exScrPoint<=8050 || exScrPoint>=9450){
+      if(scrollTop>=8050 && scrollTop<=9450){
         $('#modal-access').fadeIn(500);
       }
     }
@@ -275,3 +288,13 @@ function videoControl(action){
   var $playerWindow = $('#movie-content')[0].contentWindow;
   $playerWindow.postMessage('{"event":"command","func":"'+action+'","args":""}', '*');
 }
+ 
+function allow_move() {
+    $('#allow_img').animate({
+        marginTop: '-=10px'
+    }, 800).animate({
+        marginTop: '+=10px'
+    }, 800);
+    setTimeout('allow_move()', 1600); //アニメーションを繰り返す間隔
+}
+

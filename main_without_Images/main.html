@@ -8,7 +8,7 @@
 	<meta name="description" content="東京藝術大学大学院映像研究科メディア映像専攻MEDIA PRACTICE 18-19">
 	<meta name="keywords" content="藝大,映像,映像研究科,アート,メディア,メディア映像,film,new media">
 	<meta name="author" content="geidai new media">
-	<meta name="copyright" content="©2018-2019 Tokyo Geidai New Media">
+	<meta name="copyright" content="©MEDIA PRACTICE 18-19">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!--CSS-->
@@ -596,10 +596,10 @@
 				<nav>
 					<ul id="tabs">
 						<li><a href="#top" class="go_top">Top</a></li>
-						<li><a href="#outline" id="go_outline">About</a></li>
+						<li><a href="#outline" class="go_outline">About</a></li>
 						<li><a href="#information" id="go_information">Information</a></li>
 						<li><a href="#exhibitors" id="go_exhibitors">Exhibitors</a></li>
-						<li><a href="#access" id="go_access">Access</a></li>
+						<li><a href="#access" class="go_access">Access</a></li>
 					</ul>
 				</nav>
 
@@ -620,10 +620,7 @@
 		<div id="black"></div>
 		<div class="Animation">
 			<img src="./images/anim/gateAnim_0000.png" id="Anim" onclick="scr()">
-
-			<div class="base-modal" id="modal-yobi">
-				<h1>DEATH</h1>
-			</div>
+			<img src="./img/allow01.png" id="allow_img" class="go_outline">
 		</div><!-- Animation-->
 
 		<div class="bottom_wrapper">
@@ -643,15 +640,18 @@
 				<div class="bottom_section info" id="information">
 					<div class="section_contents">
 						<h1>開催概要</h1>
-						<h3>MEDIA PRACTICE 18-19<br>東京藝術大学大学院映像研究科メディア映像専攻 年次成果発表会<br>修士課程修了制作展｜修士一年次成果発表</h3>
-						<p>会期｜2019年1月19日(土)-20日(日)<br>
-							時間｜11:00-19:00(入場は18:30まで)<br>
-							会場｜東京藝術大学 横浜校地 元町中華街校舎<br>
-							入場｜無料<br>
-							主催｜東京藝術大学大学院映像研究科 横浜市文化観光局<br>
-							お問い合わせ｜media-practice[at]gsfnm.jp<br>
+						<span id="info_title" font-size="2em">MEDIA PRACTICE 18-19</span>
+						<h3>東京藝術大学 大学院映像研究科 メディア映像専攻&emsp;年次成果発表会<br>修士課程修了制作展｜修士一年次成果発表</h3>
+						<span>会期｜2019年1月19日(土)-20日(日)<br></span>
+						<span>時間｜11:00-19:00(入場は18:30まで)<br></span>
+						<span>会場｜東京藝術大学 横浜校地 元町中華街校舎&emsp;</span>
+						<!--ここを弄る-->
+						<span class="go_access" style="border-bottom: solid 1px #ffffffaa;">→Access<br></span>
+						<span>入場｜無料<br></span>
+						<span>主催｜東京藝術大学 大学院映像研究科&emsp;横浜市文化観光局<br></span>
+						<span>お問い合わせ｜media-practice[at]gsfnm.jp
 							※[at]→@に書き換えてください
-						</p>
+						<br></span>
 					</div><!--section_contents-->
 				</div><!-- INFORMATION -->		
 			</div>
@@ -913,7 +913,7 @@
 				<div class="bottom_section access" id="access">
 
 					<div class="section_contents" id="access_section">
-						<h1>会場案内</h1>
+						<h1>アクセス</h1>
 						<div class="access_wrapper">
 
 							<div id="access_map"></div>
@@ -922,7 +922,7 @@
 								<p><span style="font-weight: bolder;">東京藝術大学 横浜校地 元町中華街校舎</span><br>
 									〒231-0023 神奈川県横浜市中区山下町116<br>
 									みなとみらい線「元町・中華街駅」駅3番出口より徒歩約6分<br>
-									JR京浜東北線「石川町」駅北口より徒歩約5分<br>
+									JR京浜東北線・根岸線「石川町」駅北口より徒歩約5分<br>
 								</p>
 							</div>
 							
@@ -937,7 +937,7 @@
 		<footer>
 
 			<div id= "copyright">
-				©2018-2019, Tokyo Geidai New Media
+				©MEDIA PRACTICE 18-19
 			</div>
 
 			<div id="social">

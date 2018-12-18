@@ -49,7 +49,7 @@ header #logo img {
 
 header #logo2 img {
 	display: inline-block;
-	height: 60px;
+	height: 48px;
 	z-index: 9999;
 }
 
@@ -86,7 +86,7 @@ body {
 	/*  IE8以下の代替の背景画像  */
 	position:relative;
 	width: 100%;
-	height:18000px; 
+	height:11700px; 
 
 	background: black;
 	background-attachment: fixed;
@@ -739,9 +739,19 @@ a.hover {
 		font-size: 4vw;
 	}
 }
+
+
+#container .bottom_wrapper .base-modal .bottom_section .section_contents #info_title {
+	text-align: left;
+	font-size: 1.7em;
+	padding: 0% 0;
+}
+
+
+
 #container .bottom_wrapper .base-modal .bottom_section .section_contents h3 {
 	font-size: 1em;
-	padding: 3% 0;
+	padding: 2% 0;
 }
 @media only screen and (max-width: 768px) and (orientation: portrait) {
 	#container .bottom_wrapper .base-modal .bottom_section .section_contents h3 {
@@ -751,6 +761,10 @@ a.hover {
 #container .bottom_wrapper .base-modal .bottom_section .section_contents p {
 	line-height: 2.1em;
 	padding: 0.5% 0;
+}
+#container .bottom_wrapper .base-modal .bottom_section .section_contents span {
+	line-height: 1.8em;
+	padding: 0.1% 0;
 }
 #container .bottom_wrapper .base-modal .bottom_section .section_contents .outline_signature {
 	text-align: right;
@@ -1109,6 +1123,15 @@ a.hover {
 	padding: 0px;
 	z-index: -100;
 	opacity: 0.15;
+}
+
+#allow_img{
+	display: none;
+	position: fixed;
+	top: 36%;
+	left: 45%;
+	width: 10%;
+	opacity: 0.7;
 }
 
 
