@@ -997,7 +997,6 @@ a.hover {
 	padding-right: 2%;
 	height: 70%;
 	margin: 0;
-	vertical-align: middle;
 	display: inline-block;
 }
 #container .bottom_wrapper .base-modal #access .section_contents .access_wrapper #access_text {
@@ -1005,9 +1004,8 @@ a.hover {
 	width: 44%;
 	padding-left: 2%;
 	padding-right: 4%;
-	height: 400px;
+	height: 40%;
 	margin: 0;
-	vertical-align: middle;
 	display: inline-block;
 }
 #container .bottom_wrapper .base-modal .access .section_contents .access_wrapper #access_map .mapInfo {
