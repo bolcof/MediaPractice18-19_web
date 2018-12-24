@@ -58,7 +58,6 @@ header ul{
 	position: absolute;
 	top: 35px;
 	right: 20px;
-	color: #E62766;
 }
 
 header ul li {
@@ -67,7 +66,7 @@ header ul li {
 	line-height: 16px;
 	margin-left: 20px;
 	float: left;
-	color: #E62766;
+	color: #E6276600;
 }
 
 header ul li a {
@@ -86,7 +85,7 @@ body {
 	/*  IE8以下の代替の背景画像  */
 	position:relative;
 	width: 100%;
-	height:11700px; 
+	height:11200px; 
 
 	background: black;
 	background-attachment: fixed;
@@ -1126,15 +1125,24 @@ a.hover {
 	opacity: 0.15;
 }
 
-#allow_img{
+#allow_wrapper{
 	display: none;
 	position: fixed;
 	top: 45%;
-	left: 46.6%;
-	opacity: 0.7;
-	font-size:110px;
+	left: 0px;
+	width: 100%;
+	height: 20%;
 }
 
+#allow_img{
+	display: none;
+	position: fixed;
+	width: 6%;
+	top: 45%;
+	left: 47%;
+	opacity: 0.7;
+	font-size: 110px;
+}
 
 .base-modal{
 	position: fixed;

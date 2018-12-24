@@ -158,7 +158,8 @@ $(window).click(function(){
       },
       function(){
         $('#movie').fadeOut(667);
-        $('#allow_img').show();
+        $('#allow_wrapper').show();
+        $('#allow_img').css("display", "block");
         setTimeout('allow_move()');
       });
     videoControl("pauseVideo");
@@ -177,22 +178,22 @@ window.onscroll=function(){
     scrollTop=exScrPoint;
   }
   // console.log(scrollTop);
-  if(scrollTop>=10800){
-    scrollTop=10800;
+  if(scrollTop>=10300){
+    scrollTop=10300;
   }
   var ret = ( '0000' + Math.round(scrollTop/12)).slice( -4 );
-  var filename = './images/anim/gateAnim_' + ret + '.png';
+  var filename = './images/anim_sell/gateAnim_' + ret + '.png';
   $('#Anim').attr('src',filename);
   if(!isButtonScrolling){
 
-    if(exScrPoint<=500){
-      if(scrollTop>=500){
+    if(exScrPoint<=300){
+      if(scrollTop>=300){
         $('#allow_img').fadeOut(333);
       }
     }
 
-    if(exScrPoint<=900){
-      if(scrollTop>=900){
+    if(exScrPoint<=400){
+      if(scrollTop>=400){
         easing(0.15,1.0,333,
           function(opacity){
             $("#Anim")
@@ -204,26 +205,26 @@ window.onscroll=function(){
         videoControl("pauseVideo");
         isPlaying = false;
       }
-    }else if(exScrPoint>=1550 && exScrPoint<=2950){
-      if(scrollTop<=1550 || scrollTop>=2950){
+    }else if(exScrPoint>=1050 && exScrPoint<=2450){
+      if(scrollTop<=1050 || scrollTop>=2450){
         $('#modal-about').fadeOut(500);
       }
-    }else if(exScrPoint>=3550 && exScrPoint<=4950){
-      if(scrollTop<=3550 || scrollTop>=4950){
+    }else if(exScrPoint>=3050 && exScrPoint<=4450){
+      if(scrollTop<=3050 || scrollTop>=4450){
         $('#modal-info').fadeOut(500);
       }
-    }else if(exScrPoint>=5550 && exScrPoint<=7450){
-      if(scrollTop<=5550 || scrollTop>=7450){
+    }else if(exScrPoint>=5050 && exScrPoint<=6950){
+      if(scrollTop<=5050 || scrollTop>=6950){
         $('#modal-exhibitors').fadeOut(500);
       }
-    }else if(exScrPoint>=8050 && exScrPoint<=9450){
-      if(scrollTop<=8050 || scrollTop>=9450){
+    }else if(exScrPoint>=7550 && exScrPoint<=8950){
+      if(scrollTop<=7550 || scrollTop>=8950){
         $('#modal-access').fadeOut(500);
       }
     }
 
-    if(exScrPoint>=900){
-      if(scrollTop<=900){
+    if(exScrPoint>=400){
+      if(scrollTop<=400){
         easing(1.0,0.15,333,
           function(opacity){
             $("#Anim")
@@ -237,23 +238,23 @@ window.onscroll=function(){
         isPlaying = true;
       }
     }
-    if(exScrPoint<=1550 || exScrPoint>=2950){
-      if(scrollTop>=1550 && scrollTop<=2950){
+    if(exScrPoint<=1050 || exScrPoint>=2450){
+      if(scrollTop>=1050 && scrollTop<=2450){
         $('#modal-about').fadeIn(500);
       }
     }
-    if(exScrPoint<=3550 || exScrPoint>=4950){
-      if(scrollTop>=3550 && scrollTop<=4950){
+    if(exScrPoint<=3050 || exScrPoint>=4450){
+      if(scrollTop>=3050 && scrollTop<=4450){
         $('#modal-info').fadeIn(500);
       }
     }
-    if(exScrPoint<=5550 || exScrPoint>=7450){
-      if(scrollTop>=5550 && scrollTop<=7450){
+    if(exScrPoint<=5050 || exScrPoint>=6950){
+      if(scrollTop>=5050 && scrollTop<=6950){
         $('#modal-exhibitors').fadeIn(500);
       }
     }
-    if(exScrPoint<=8050 || exScrPoint>=9450){
-      if(scrollTop>=8050 && scrollTop<=9450){
+    if(exScrPoint<=7550 || exScrPoint>=8950){
+      if(scrollTop>=7550 && scrollTop<=8950){
         $('#modal-access').fadeIn(500);
       }
     }
