@@ -58,7 +58,7 @@ $('.go_outline').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  easing(document.documentElement.scrollTop/*後で*/,2250,667,
+  easing(document.documentElement.scrollTop/*後で*/,1200,667,
     function(value){(document.documentElement.scrollTop) = value;},
     function(){
       $('#modal-about').fadeIn(500);
@@ -84,7 +84,7 @@ $('#go_information').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  easing(document.documentElement.scrollTop/*後で*/,4250,667,
+  easing(document.documentElement.scrollTop/*後で*/,3200,667,
     function(value){(document.documentElement.scrollTop) = value;},
     function(){
       $('#modal-info').fadeIn(500);
@@ -110,7 +110,7 @@ $('#go_exhibitors').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  easing(document.documentElement.scrollTop/*後で*/,6500,667,
+  easing(document.documentElement.scrollTop/*後で*/,5200,667,
     function(value){(document.documentElement.scrollTop) = value;},
     function(){
       /*outlineをフェードイン*/
@@ -137,7 +137,7 @@ $('.go_access').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  easing(document.documentElement.scrollTop/*後で*/,8750,667,
+  easing(document.documentElement.scrollTop/*後で*/,7700,667,
     function(value){(document.documentElement.scrollTop) = value;},
     function(){
       $('#modal-access').fadeIn(500);
@@ -178,22 +178,22 @@ window.onscroll=function(){
     scrollTop=exScrPoint;
   }
   // console.log(scrollTop);
-  if(scrollTop>=10300){
-    scrollTop=10300;
+  if(scrollTop>=9900){
+    scrollTop=9900;
   }
-  var ret = ( '0000' + Math.round(scrollTop/12)).slice( -4 );
+  var ret = ( '0000' + Math.round(scrollTop/11)).slice( -4 );
   var filename = './images/anim_sell/gateAnim_' + ret + '.png';
   $('#Anim').attr('src',filename);
   if(!isButtonScrolling){
 
-    if(exScrPoint<=300){
-      if(scrollTop>=300){
+    if(exScrPoint<=200){
+      if(scrollTop>=200){
         $('#allow_img').fadeOut(333);
       }
     }
 
-    if(exScrPoint<=400){
-      if(scrollTop>=400){
+    if(exScrPoint<=250){
+      if(scrollTop>=250){
         easing(0.15,1.0,333,
           function(opacity){
             $("#Anim")
@@ -205,26 +205,26 @@ window.onscroll=function(){
         videoControl("pauseVideo");
         isPlaying = false;
       }
-    }else if(exScrPoint>=1050 && exScrPoint<=2450){
-      if(scrollTop<=1050 || scrollTop>=2450){
+    }else if(exScrPoint>=900 && exScrPoint<=2300){
+      if(scrollTop<=900 || scrollTop>=2300){
         $('#modal-about').fadeOut(500);
       }
-    }else if(exScrPoint>=3050 && exScrPoint<=4450){
-      if(scrollTop<=3050 || scrollTop>=4450){
+    }else if(exScrPoint>=2900 && exScrPoint<=4300){
+      if(scrollTop<=2900 || scrollTop>=4300){
         $('#modal-info').fadeOut(500);
       }
-    }else if(exScrPoint>=5050 && exScrPoint<=6950){
-      if(scrollTop<=5050 || scrollTop>=6950){
+    }else if(exScrPoint>=4900 && exScrPoint<=6800){
+      if(scrollTop<=4900 || scrollTop>=6800){
         $('#modal-exhibitors').fadeOut(500);
       }
-    }else if(exScrPoint>=7550 && exScrPoint<=8950){
-      if(scrollTop<=7550 || scrollTop>=8950){
+    }else if(exScrPoint>=7400 && exScrPoint<=8800){
+      if(scrollTop<=7400 || scrollTop>=8800){
         $('#modal-access').fadeOut(500);
       }
     }
 
-    if(exScrPoint>=400){
-      if(scrollTop<=400){
+    if(exScrPoint>=250){
+      if(scrollTop<=250){
         easing(1.0,0.15,333,
           function(opacity){
             $("#Anim")
@@ -238,23 +238,23 @@ window.onscroll=function(){
         isPlaying = true;
       }
     }
-    if(exScrPoint<=1050 || exScrPoint>=2450){
-      if(scrollTop>=1050 && scrollTop<=2450){
+    if(exScrPoint<=900 || exScrPoint>=2300){
+      if(scrollTop>=900 && scrollTop<=2300){
         $('#modal-about').fadeIn(500);
       }
     }
-    if(exScrPoint<=3050 || exScrPoint>=4450){
-      if(scrollTop>=3050 && scrollTop<=4450){
+    if(exScrPoint<=2900 || exScrPoint>=4300){
+      if(scrollTop>=2900 && scrollTop<=4300){
         $('#modal-info').fadeIn(500);
       }
     }
-    if(exScrPoint<=5050 || exScrPoint>=6950){
-      if(scrollTop>=5050 && scrollTop<=6950){
+    if(exScrPoint<=4900 || exScrPoint>=6800){
+      if(scrollTop>=4900 && scrollTop<=6800){
         $('#modal-exhibitors').fadeIn(500);
       }
     }
-    if(exScrPoint<=7550 || exScrPoint>=8950){
-      if(scrollTop>=7550 && scrollTop<=8950){
+    if(exScrPoint<=7400 || exScrPoint>=8800){
+      if(scrollTop>=7400 && scrollTop<=8800){
         $('#modal-access').fadeIn(500);
       }
     }
