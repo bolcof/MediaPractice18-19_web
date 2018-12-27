@@ -1,0 +1,1117 @@
+
+<!DOCTYPE html>
+<html lang = "ja">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MEDIA PRACTICE 18-19</title>
+	<meta charset="utf-8">
+	<meta name="description" content="東京藝術大学大学院映像研究科メディア映像専攻MEDIA PRACTICE 18-19">
+	<meta name="keywords" content="藝大,映像,映像研究科,アート,メディア,メディア映像,film,new media">
+	<meta name="author" content="geidai new media">
+	<meta name="copyright" content="©2018-2019 Tokyo Geidai New Media">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--CSS-->
+	<link rel = "stylesheet" type = text/css href = "css/style3.css" />
+
+  	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!--lity-->
+	<link rel="stylesheet" href="lity/lity.min.css">
+	<script src="lity/lity.min.js"></script>
+
+	<!--toggle navigation-->
+	<script>
+	$(function() {
+    $('#navToggle').click(function(){ //headerに .openNav を付加・削除
+      $('#slide_menu').toggleClass('openNav');
+    });
+
+		$('.sp_menu').click(function(){
+			$('#slide_menu').toggleClass('openNav');
+		});
+	});
+	</script>
+
+	<!--fix-->
+	<script>
+		var menuState = false; //true:メニュー表示
+		var scrollState = false; //true: ヘッダ表示
+		var scrollPos;
+
+		//scroll位置判定
+		$(function(){
+			var global_nav = $('#header_menu');
+			scrollPos = $('#prologue').offset().top-500;
+
+			$(window).scroll(function () {
+					var winTop = $(this).scrollTop();
+					if (winTop >= scrollPos) {
+							if (scrollState == false) {
+									scrollState = true;
+									global_nav.fadeIn();
+							}
+					} else if (winTop < scrollPos) {
+							if (scrollState && !menuState) {
+									scrollState = false;
+									global_nav.fadeOut();
+							}
+					}
+			});
+		});
+
+	//fix
+	$('#navToggle').on('click', function(){
+		if(menuState == false) {
+			//scrollpos = $(window).scrollTop();
+			$('body').addClass('fixed');
+			menuState = true;
+		} else {
+			$('body').removeClass('fixed');
+			//window.scrollTo( 0 , scrollpos );
+			$('.menu').removeClass('open');
+			menuState = false;
+		}
+	});
+
+	//fix
+	$('.sp_menu').on('click', function(){
+		$('body').removeClass('fixed');
+		//window.scrollTo( 0 , scrollpos );
+		$('.menu').removeClass('open');
+		state = false;
+	});
+	</script>
+
+	<!-- font awsome-->
+	<!--Font Awesome by Dave Gandy - http://fontawesome.io-->
+	<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+	<!--user agent-->
+	<script type="text/javascript">
+	var ua = navigator.userAgent;
+	if (ua.indexOf('iPhone') > 0
+			|| (ua.indexOf('iPad') > 0)
+			|| (ua.indexOf('Android') > 0) && (ua.indexOf('Mobile') > 0)
+			|| (ua.indexOf('Android') > 0) && (ua.indexOf('Mobile') == 0)
+			|| ua.indexOf('Windows Phone') > 0) {
+			} else {
+				// pc用へ
+				location.href = '../main.html';
+			}
+	</script>
+
+	<!--google api-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+	<!-- fancybox -->
+	<script src="fancybox/jquery.fancybox.min.js"></script>
+	<script>
+		$('[data-fancybox').fancybox();
+	</script>
+
+</head>
+
+<body>
+	<!-- modal window -->
+	<div id="modal">
+		<div id="modal_wrapper">
+
+			<!--//////////////////////////////////////////////////////////-->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="asakura_info">
+
+				<div class="single_member_contents">
+					<ul class="bxslider">
+					<img src="../img/exhi/m2/1_asakura_01.jpg" width="100%" height="auto">
+					<div class="caption">流れうつる私の複数(2018)</div>
+
+					<img src="../img/exhi/m2/1_asakura_02.jpg" width="100%" height="auto">
+					<div class="caption">流れうつる私の複数(2018)</div>
+					<img src="../img/exhi/m2/1_asakura_03.jpg" width="100%" height="auto">
+					<div class="caption">流れうつる私の複数(2018)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">朝倉千恵子｜Chieko Asakura</div>
+						<div class="labo-name modal_text">高山明研究室</div>
+						<div class="bio modal_text">1994年 広島県出身<br>武蔵野美術大学 造形学部 映像学科卒</div>
+					</div>
+				</div><!-- single_member_contents -->
+				
+			</div><!-- single_member_wrapper asakura -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="abe_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m2/2_abe_01.jpg" width=100% height="auto">
+					<div class="caption">f moon/(2016)</div>
+					<img src = "../img/exhi/m2/2_abe_02.jpg" width=100% height="auto">
+					<div class="caption">忘れるな身体よ(2018)</div>
+					<img src = "../img/exhi/m2/2_abe_03.png" width=100% height="auto">
+					<div class="caption">うつしみ　うつろい(2018)</div>
+					
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">阿部真理亜｜Maria Abe</div>
+						<div class="labo-name modal_text">高山明研究室</div>
+						<div class="bio modal_text">1994年 東京都出身<br>日本女子体育大学 舞踊学専攻卒</div>
+						<a href ="https://twitter.com/mariaaaa1129" target="blank"><div class="link modal_text">https://twitter.com/mariaaaa1129</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+				
+			</div><!-- single_member_wrapper abe -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="ikeda_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m2/3_ikeda_01.jpg" width=100% height="auto">
+					<div class="caption">写経(2017)</div>
+					<img src = "../img/exhi/m2/3_ikeda_02.png" width=100% height="auto">
+					<div class="caption">蟻は歩いてゆく(2018)</div>
+					<img src = "../img/exhi/m2/3_ikeda_03.jpg" width=100% height="auto">
+					<div class="caption">穴の空いた文字(2018)</div>
+					
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">池田愛｜Ai Ikeda</div>
+						<div class="labo-name modal_text">桂英史研究室</div>
+						<div class="bio modal_text">1994年 兵庫県出身<br>同志社女子大学 学芸学部 情報メディア学科卒</div>
+						<a href ="http://ai--ikeda.tumblr.com/" target="blank"><div class="link modal_text">http://ai--ikeda.tumblr.com/</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+				
+			</div><!-- single_member_wrapper ikeda -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="isozaki_info">
+
+				<div class="single_member_contents">
+					<img src="../img/exhi/m2/4_isozaki_01.jpg" width=100% height="auto">
+					<div class="caption">2018年 松川浦にて(2018)</div>
+					<img src="../img/exhi/m2/4_isozaki_02.jpg" width=100% height="auto">
+					<div class="caption">ベース、ボール歌合戦(2017)</div>
+					<img src="../img/exhi/m2/4_isozaki_03.jpg" width=100% height="auto">
+					<div class="caption">小民謡プロジェクト #稲城場所(2017)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">磯崎未菜｜Mina Isozaki</div>
+						<div class="labo-name modal_text">畠山直哉研究室</div>
+						<div class="bio modal_text">1992年 東京都出身<br>東京藝術大学 美術学部 先端芸術表現科卒</div>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper isozaki -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="mikusato_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m2/5_mikusato_01.jpg" width=100% height="auto">
+					<div class="caption">Retelling Yokohama(2018)</div>
+					<img src = "../img/exhi/m2/5_mikusato_02.jpg" width=100% height="auto">
+					<div class="caption">White Long Narrow Paper(2018)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">佐藤未来｜Miku Sato</div>
+						<div class="labo-name modal_text">高山明研究室</div>
+						<div class="bio modal_text">1985年 神奈川県出身<br>武蔵野美術大学 造形学部 油絵学科卒</div>
+						<a href ="http://mikusato.com/" target="blank"><div class="link modal_text">http://mikusato.com/</div>
+					</div></a>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper mikusato -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="yurisato_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m2/6_yurisato_01.jpg" width=100% height="auto">
+					<div class="caption">physical_5_textile(2018)</div>
+					<img src = "../img/exhi/m2/6_yurisato_02.jpg" width=100% height="auto">
+					<div class="caption">とらえる(2018)</div>
+					<img src = "../img/exhi/m2/6_yurisato_03.jpg" width=100% height="auto">
+					<div class="caption">physical_5_film(2017)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">佐藤友理｜Yuri Sato</div>
+						<div class="labo-name modal_text">桂英史研究室</div>
+						<div class="bio modal_text">1994年 岡山県出身<br>武蔵野美術大学 造形学部 空間演出デザイン学科卒</div>
+						<a href ="https://www.yuri-sato.com/" target="blank"><div class="link modal_text">https://www.yuri-sato.com/</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper yurisato -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="shibata_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m2/7_shibata_01.jpg" width=100% height="auto">
+					<div class="caption">リフレイン(2018)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">柴田悠｜Yu Shibata</div>
+						<div class="labo-name modal_text">佐藤雅彦研究室</div>
+						<div class="bio modal_text">1991年 秋田県出身<br>京都大学 文学部 美学美術史学専修卒</div>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper shibata -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="suzuki_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m2/8_suzuki_01.jpg" width=100% height="auto">
+					<div class="caption">すべてが透明になる前に(2018)</div>
+					<img src = "../img/exhi/m2/8_suzuki_02.jpg" width=100% height="auto">
+					<div class="caption">C.F.D(2017)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">鈴木雄大｜Yudai Suzuki</div>
+						<div class="labo-name modal_text">畠山直哉研究室</div>
+						<div class="bio modal_text">1993年 愛知県出身<br>武蔵野美術大学 造形学部 油絵学科 油絵専攻卒</div>
+						<a href ="http://yudai-suzuki.wixsite.com/works" target="blank"><div class="link modal_text">http://yudai-suzuki.wixsite.com/works</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper suzuki -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="takamizawa_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m2/9_takamizawa_01.png" width=100% height="auto">
+					<div class="caption">Last illumination desktop(2018)</div>
+					<img src = "../img/exhi/m2/9_takamizawa_02.jpg" width=100% height="auto">
+					<div class="caption">Last illumination desktop(2018)</div>
+					<img src = "../img/exhi/m2/9_takamizawa_03.jpg" width=100% height="auto">
+					<div class="caption">SPECTER(2017)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">高見澤峻介｜Shunsuke Takamizawa</div>
+						<div class="labo-name modal_text">畠山直哉研究室</div>
+						<div class="bio modal_text">1993年 山梨県出身<br>東京藝術大学 美術学部 先端芸術表現科卒</div>
+						<a href ="http://snsktakamizawa.tumblr.com/" target="blank"><div class="link modal_text">http://snsktakamizawa.tumblr.com/</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper takamizawa -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="tsukiji_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m2/10_tsukiji_01.png" width=100% height="auto">
+					<div class="caption">向かうねずみ(2018)</div>
+					<img src = "../img/exhi/m2/10_tsukiji_02.png" width=100% height="auto">
+					<div class="caption">向かうねずみ(2018)</div>
+					<img src = "../img/exhi/m2/10_tsukiji_03.png" width=100% height="auto">
+					<div class="caption">向かうねずみ(2018)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">築地のはら｜Nohara Tsukiji</div>
+						<div class="labo-name modal_text">桐山孝司研究室</div>
+						<div class="bio modal_text">1994年 神奈川県出身<br>東京造形大学 造形学部 デザイン学科 アニメーション専攻卒</div>
+						<a href ="http://noharatukiji.tumblr.com/" target="blank"><div class="link modal_text">http://noharatukiji.tumblr.com/</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper tsukiji -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="nakamura_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m2/11_nakamura_01.jpg" width=100% height="auto">
+					<div class="caption">毎日の窓(2018)</div>
+					<img src = "../img/exhi/m2/11_nakamura_02.jpg" width=100% height="auto">
+					<div class="caption">桃源郷芸術祭2018 プロモーション映像(2018)</div>
+					<img src = "../img/exhi/m2/11_nakamura_03.jpg" width=100% height="auto">
+					<div class="caption">◯△□(2018)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">中村葉月｜Hazuki Nakamura</div>
+						<div class="labo-name modal_text">佐藤雅彦研究室</div>
+						<div class="bio modal_text">1994年 千葉県出身<br>東京藝術大学 美術学部 建築科卒</div>
+						<a href ="http://haguki88.tumblr.com/" target="blank"><div class="link modal_text">http://haguki88.tumblr.com/</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper nakamura -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="fuse_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m2/12_fuse_01.jpg" width=100% height="auto">
+					<div class="caption">地図と領土(2018)</div>
+					<img src = "../img/exhi/m2/12_fuse_02.jpg" width=100% height="auto">
+					<div class="caption">地図と領土(2018)</div>
+					<img src = "../img/exhi/m2/12_fuse_03.jpg" width=100% height="auto">
+					<div class="caption">存在の生成と消滅のparallax(2017)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">布施琳太郎｜Rintaro Fuse</div>
+						<div class="labo-name modal_text">桂英史研究室</div>
+						<div class="bio modal_text">1994年 東京都出身<br>東京藝術大学 美術学部 絵画科 油画専攻卒</div>
+						<a href ="http://rintarofuse.com/" target="blank"><div class="link modal_text">http://rintarofuse.com/</div>
+					</div></a>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper fuse -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="matsuo_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m2/13_matsuo_01.png" width=100% height="auto">
+					<div class="caption">Over the indirect(2018)</div>
+					<img src = "../img/exhi/m2/13_matsuo_02.png" width=100% height="auto">
+					<div class="caption">Indirect Story(2018)</div>
+					<img src = "../img/exhi/m2/13_matsuo_03.png" width=100% height="auto">
+					<div class="caption">Indirect(2017)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">松尾若葉｜Wakaba Matsuo</div>
+						<div class="labo-name modal_text">佐藤雅彦研究室</div>
+						<div class="bio modal_text">1993年 愛媛県出身<br>京都造形芸術大学 芸術表現・アートプロデュース学科卒</div>
+						<a href ="http://www.wakabamatsuo.com/" target="blank"><div class="link modal_text">https://www.wakabamatsuo.com/</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper matsuo -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="moriya_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m2/14_moriya_01.jpg" width=100% height="auto">
+					<div class="caption">Form(2019)</div>
+					<img src = "../img/exhi/m2/14_moriya_02.jpg" width=100% height="auto">
+					<div class="caption">calm.2(2017)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">守谷芽久生｜Megumi Moriya</div>
+						<div class="labo-name modal_text">桐山孝司研究室</div>
+						<div class="bio modal_text">1993年 静岡県出身<br>武蔵野美術大学 造形学部 映像学科卒</div>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper moriya -->
+
+			<!--m2 end / m1 begin ///////////////////////-->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="asao_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m1/1_asao_01.jpg" width=100% height="auto">
+					<div class="caption">確かな気配(2017)</div>
+					<img src = "../img/exhi/m1/1_asao_02.jpg" width=100% height="auto">
+					<div class="caption">声を殺して叫べ(2018)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">浅尾鷹哉｜Takaya Asao</div>
+						<div class="labo-name modal_text">高山明研究室</div>
+						<div class="bio modal_text">1994年 福岡県出身<br>九州産業大学 芸術学部 デザイン学科卒</div>
+						<a href ="https://twitter.com/sotky_a" target="blank"><div class="link modal_text">https://twitter.com/sotky_a</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper asao -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="usami_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m1/2_usami_01.jpg" width=100% height="auto">
+					<div class="caption">Family Portrait(2018)</div>
+					<img src = "../img/exhi/m1/2_usami_02.png" width=100% height="auto">
+					<div class="caption">Family Portrait(2018)</div>
+					<img src = "../img/exhi/m1/2_usami_03.jpg" width=100% height="auto">
+					<div class="caption">Family Portrait(2018)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">宇佐美奈緒｜Nao Usami</div>
+						<div class="labo-name modal_text">桂英史研究室</div>
+						<div class="bio modal_text">1994年 東京都出身<br>東京藝術大学 美術学部 デザイン科卒</div>
+						<a href ="http://naousami.com/" target="blank"><div class="link modal_text">http://naousami.com</div>
+					</div></a>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper usami -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="endo_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m1/3_endo_01.jpg" width=100% height="auto">
+					<div class="caption">次元の混在(2018)</div>
+					<img src = "../img/exhi/m1/3_endo_02.png" width=100% height="auto">
+					<div class="caption">鏡像の妙(2017)</div>
+					<img src = "../img/exhi/m1/3_endo_03.png" width=100% height="auto">
+					<div class="caption">生殖I(2018)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">遠藤紘也｜Hiroya Endo</div>
+						<div class="labo-name modal_text">佐藤雅彦研究室</div>
+						<div class="bio modal_text">1995年 神奈川県出身<br>多摩美術大学 美術学部 統合デザイン学科卒</div>
+						<a href ="http://hiroya-endo.net/" target="blank"><div class="link modal_text">http://hiroya-endo.net/</div>
+					</div></a>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper endo -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="oikawa_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m1/4_oikawa_01.jpg" width=100% height="auto">
+					<div class="caption">追憶のラジオ(2019)</div> <!--要確認 作品タイトル聞く-->
+					<img src = "../img/exhi/m1/4_oikawa_02.jpg" width=100% height="auto">
+					<div class="caption">本当に大事なことはあなたの目の前では起こらない(2017)</div>
+					<img src = "../img/exhi/m1/4_oikawa_03.png" width=100% height="auto">
+					<div class="caption">島(2018)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">及川菜摘｜Natsumi Oikawa</div>
+						<div class="labo-name modal_text">高山明研究室</div>
+						<div class="bio modal_text">1995年 東京都出身<br>東京造形大学 造形学部 デザイン学科 映画専攻卒</div>
+						<a href ="http://natsumioikawa.tumblr.com/" target="blank"><div class="link modal_text">https://natsumioikawa.tumblr.com/</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper oikawa -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="okada_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m1/5_okada_01.jpg" width=100% height="auto">
+					<div class="caption">理不尽な饗宴(2018)</div>
+					<img src = "../img/exhi/m1/5_okada_02.jpg" width=100% height="auto">
+					<div class="caption">Gaius(2017)</div>
+					<img src = "../img/exhi/m1/5_okada_03.jpg" width=100% height="auto">
+					<div class="caption">Gorgon(2017)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">岡田直己｜Naoki Okada</div>
+						<div class="labo-name modal_text">桂英史研究室</div>
+						<div class="bio modal_text">1992年 茨城県出身<br>東京藝術大学 美術学部 デザイン科卒</div>
+						<a href ="http://bat-headache-ouchouchouch.tumblr.com/" target="blank"><div class="link modal_text">http://bat-headache-ouchouchouch.tumblr.com/</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper okada -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="kanai_info">
+
+				<div class="single_member_contents">
+
+					<img src = "../img/exhi/m1/6_kanai_01.jpg" width=100% height="auto">
+					<div class="caption">1日分の刹那(2018)</div>
+					<img src = "../img/exhi/m1/6_kanai_02.jpg" width=100% height="auto">
+					<div class="caption">根菜(2016)</div>
+					<img src = "../img/exhi/m1/6_kanai_03.png" width=100% height="auto">
+					<div class="caption">laminate(2015)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">金井啓太｜Keita Kanai</div>
+						<div class="labo-name modal_text">佐藤雅彦研究室</div>
+						<div class="bio modal_text">1994年 東京都出身<br>筑波大学 情報学群 情報メディア創成学類卒</div>
+						<a href ="http://volkhov.tumblr.com/" target="blank"><div class="link modal_text">https://volkhov.tumblr.com/</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper kanai -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="kobayashi_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m1/7_kobayashi_01.jpg" width=100% height="auto">
+					<div class="caption">sightsseeing(2018)</div>
+					<img src = "../img/exhi/m1/7_kobayashi_02.png" width=100% height="auto">
+					<div class="caption">パウンドケーキと佐藤先生(2018)</div>
+					<img src = "../img/exhi/m1/7_kobayashi_03.png" width=100% height="auto">
+					<div class="caption">Betweener(2017)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">小林 颯｜Hayate Kobayashi</div>
+						<div class="labo-name modal_text">桐山孝司研究室</div>
+						<div class="bio modal_text">1995年 北海道出身<br>慶應義塾大学 環境情報学部 環境情報学科卒</div>
+						<a href ="https://vimeo.com/user15242827" target="blank"><div class="link modal_text">https://vimeo.com/user15242827</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper kobayashi -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="shikichi_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m1/8_shikichi_02.jpg" width=100% height="auto">
+					<div class="caption">Private Parts(2018)</div>
+					<img src = "../img/exhi/m1/8_shikichi_03.jpg" width=100% height="auto">
+					<div class="caption">Private Parts(2018)</div>
+					<img src = "../img/exhi/m1/8_shikichi_04.jpg" width=100% height="auto">
+					<div class="caption">Private Parts(2018)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">敷地 理｜Osamu Shikichi</div>
+						<div class="labo-name modal_text">高山明研究室</div>
+						<div class="bio modal_text">1994年 埼玉県出身<br>武蔵野美術大学 造形学部 彫刻学科卒</div>
+						<a href ="https://mumumubrothers.wixsite.com/osamu-shikichi/" target="blank"><div class="link modal_text">https://mumumubrothers.wixsite.com/osamu-shikichi</div></a>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper shikichi -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="shimizu_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m1/9_shimizu_01.png" width=100% height="auto">
+					<div class="caption">複製との対峙(2017)</div>
+					<img src = "../img/exhi/m1/9_shimizu_02.jpg" width=100% height="auto">
+					<div class="caption">光の物語(2017)</div>
+					<img src = "../img/exhi/m1/9_shimizu_03.jpg" width=100% height="auto">
+					<div class="caption">InfluRed(2018)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">清水愛恵｜Manae Shimizu</div>
+						<div class="labo-name modal_text">桐山孝司研究室</div>
+						<div class="bio modal_text">1995年 東京都出身<br>首都大学東京 システムデザイン学部 インダストリアルアートコース卒</div>
+						<a href ="http://manaepf-tokyo.com/" target="blank"><div class="link modal_text">http://manaepf-tokyo.com</div>
+					</div></a>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper shimizu -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="calvero_info">
+
+				<div class="single_member_contents">
+
+					<img src = "../img/exhi/m1/10_shin_01.png" width=100% height="auto">
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">申 晛湜｜Hyunsik Calvero Shin</div>
+						<div class="labo-name modal_text">畠山直哉研究室</div>
+						<div class="bio modal_text">1992年 ソウル出身<br>早稲田大学 文化構想学部 表象・メディア論系卒</div>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper calvero -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="hashimoto_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m1/11_hashimoto_01.png" width=100% height="auto">
+					<div class="caption">dryer(2017)</div>
+					<img src = "../img/exhi/m1/11_hashimoto_02.png" width=100% height="auto">
+					<div class="caption">waver(2018)</div>
+					<img src = "../img/exhi/m1/11_hashimoto_03.png" width=100% height="auto">
+					<div class="caption">seed(2017)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">橋本湧也｜Yuya Hashimoto</div>
+						<div class="labo-name modal_text">佐藤雅彦研究室</div>
+						<div class="bio modal_text">1994年 広島県出身<br>多摩美術大学 美術学部 環境デザイン学科卒</div>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper hashimoto -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="maeda_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m1/12_maeda_01.jpg" width=100% height="auto">
+					<div class="caption">Untitled(2018)</div>
+					<img src = "../img/exhi/m1/12_maeda_02.png" width=100% height="auto">
+					<div class="caption">遠く、ながれて、ずっと(2018)</div>
+					<img src = "../img/exhi/m1/12_maeda_03.jpg" width=100% height="auto">
+					<div class="caption">The Pasts in the Future(2017)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">前田博雅｜Hiromasa Maeda</div>
+						<div class="labo-name modal_text">桂英史研究室</div>
+						<div class="bio modal_text">1996年 東京都出身<br>武蔵野美術大学 造形学部 映像学科卒</div>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper maeda -->
+
+			<!--///////////////////////-->
+			<div class="single_member_wrapper" id="yoshida_info">
+
+				<div class="single_member_contents">
+					<img src = "../img/exhi/m1/13_yoshida_01.jpg" width=100% height="auto">
+					<div class="caption">〜亡霊との対話より〜　斉藤さん(2017)</div>
+					<img src = "../img/exhi/m1/13_yoshida_02.jpg" width=100% height="auto">
+					<div class="caption">渚にて(2018)</div>
+
+					<div class="exhi_modal_info">
+						<div class="name-jp modal_text">吉田真也｜Shinya Yoshida</div>
+						<div class="labo-name modal_text">畠山直哉研究室</div>
+						<div class="bio modal_text">1994年 青森県出身<br>秋田公立美術大学 美術学部 ビジュアルアーツ専攻卒</div>
+					</div>
+				</div><!-- single_member_contents -->
+
+			</div><!-- single_member_wrapper yoshida -->
+
+			<!--///////////////////////-->
+
+		</div><!--modal_wrapper-->
+	</div><!--modal-->
+
+	<div id ="container">
+		<div class="top-wrapper">
+			<header>
+
+				<div class="video_wrapper">
+					<!-- <img src="common/img/LOGO.png"> -->
+					<!-- <video autoplay loop muted id="logo_video">
+						<source src="common/img/LOGO.m4v" type="video/mp4" poster="common/img/LOGO.png">
+					</video> -->
+
+					<!-- <img src="img/vid_pl.png" id="logo_video_sp_pl"></img> -->
+
+					<img src="img/LOGO3.svg" id="logo_video_sp"></img>
+
+				</div><!-- video_wrapper -->
+
+				<div class="title_wrapper">
+					<img class="title_top" src="img/title_yoko.svg">
+					<img class="title_bottom" src="img/title_yoko_whenwhere.svg">
+					<img class="title_top_sp" src="img/title_tate_3_3.svg">
+					<img class="title_bottom_sp" src="img/title_whenwhere_tate_2.svg">
+				</div><!-- title_wrapper -->
+
+				<!-- <a href="//www.youtube.com/watch?v=kon5uTHTlEw&autoplay=1" data-lity="data-lity"><img src="img/vid_pl_2.png" width=100% height=auto id="logo_video_sp_pl" /></a> -->
+
+				<!-- <div class ="play_video">
+					<p><a href="https://www.youtube.com/watch?v=kon5uTHTlEw&autoplay=1" data-lity="data-lity">Play video</a></p>
+				</div>
+ -->
+				<div class="angle_wrapper">
+					<div class="angle_down">
+						<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+					</div><!--angle_down-->
+				</div><!--angle_wrapper-->
+
+				<div id="header_menu">
+					<div class="header_menu_wrapper">
+						<div class="logo_wrapper">
+							<img class="header_menu_logo" src="img/title_yoko_2.svg">
+						</div>
+
+						<div id="slide_menu">
+							<nav>
+								<ul id="slidemenu_ul">
+									<li class="sp_menu"><a href="#prologue">Prologue</a></li>
+									<li class="sp_menu"><a href="#outline">Outline</a></li>
+									<li class="sp_menu"><a href="#information">Information</a></li>
+									<li class="sp_menu"><a href="#exhibitors">Exhibitors</a></li>
+									<li class="sp_menu"><a href="#access">Access</a></li>
+								</ul>
+							</nav>
+						</div><!--nav_wrapper-->
+
+						<div class="menu_bar_wrapper" id="navToggle">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+						</div><!--menu_bar_wrapper-->
+
+					</div><!--header_menu_wrapper-->
+				</div><!--header_menu-->
+
+				<div id="slide_menu">
+				</div><!--#slide menu-->
+
+			</header>
+
+		</div><!-- top-wrapper -->
+
+		<div class="bottom_wrapper">
+
+			<div class="bottom_section out" id="prologue">
+				<h1>プロローグ</h1>
+				<a href="//www.youtube.com/watch?v=kon5uTHTlEw&autoplay=1" data-lity="data-lity"><img src="img/vid_pl.png" width=100% height=auto id="logo_video_sp_pl" /></a>
+
+				<div class="section_contents">
+					<!-- <h1>PROLOGUE</h1> -->
+
+						<p class="main_text">
+							いま、新しい門を建てます<br>
+							国籍、性別、宗教、言語、出身地、貧富の差、障害の有無<br>
+							ぼくたちには数え切れない違いがある<br>
+							埋まらない溝に、終わりの見えないことばの戦いに<br>
+							疲れが見えてきたことも知っている<br>
+							だけど、この門をくぐるとき<br>
+							あなたとぼくは対等だ<br>
+							作品に対峙するとき、思考を巡らせるとき<br>
+							どこにも所属していない<br>
+							誰からもなにも奪われない<br>
+							たった一人きりの人間になる<br>
+							あなたとぼくをつなぐ<br>
+							新しい門を建てます<br>
+							はじまりとおわりの旅路として<br>
+							いま、メディアプラクティスをはじめます<br>
+						</p>
+				</div><!-- section contents -->
+			</div><!-- PROLOGUE -->
+
+			<div class="bottom_section out" id="outline">
+				<div class="section_contents">
+					<!-- <h1>OUTLINE</h1> -->
+					<!-- <h1>開催趣旨</h1> -->
+					<h1>開催趣旨</h1>
+						<p class="main_text">「MEDIA PRACTICE」はメディア映像専攻による年次成果発表会です。<br>
+							修士一年次成果発表と修士課程修了制作展が、私たちの学舎である元町中華街校舎を会場に同時開催されます。<br>
+							戦争や災害、事件の現場から日々発信される写真や動画が、SNSによって遠い場所で暮らす人々の手元へ届いています。また、身近になったドローンや衛星写真によって、遥か頭上からの俯瞰視点をも手軽に獲得できるようになりました。今や死角がなくなったといえる現代において、表現に携わりイメージを扱う者としてどのような手法を用いて応答するのかという問いを胸に、メディアへの言及を通して新たな表現の可能性を探ってきました。私たちの作品が、個人と社会を繋ぐ糸を見出し、この瞬間にも姿を現しはじめている未来の片鱗に触れるような体験を生むものであることを願っています。是非多くの方々に足を運んでいただけると嬉しいです。<br>
+						</p>
+						<p class="outline_signature">メディア映像専攻12期生・13期生一同</p>
+				</div><!-- section contents -->
+			</div><!-- OUTLINE -->
+
+			<div class="bottom_section info" id="information">
+				<div class="section_contents">
+					<!-- <h1>INFORMATION</h1> -->
+					<h1>開催概要</h1>
+					<h4>MEDIA PRACTICE 18-19<br></h4>
+					<h3>東京藝術大学大学院映像研究科メディア映像専攻 年次成果発表会<br>修士課程修了制作展｜修士一年次成果発表</h3>
+					<p>会期｜2018年1月19日(土),20日(日)<br>時間｜11:00-19:00 (入場は18:30まで)<br>東京藝術大学 横浜校地 元町中華街校舎<br>
+					<br>
+					入場｜無料<br>主催｜東京藝術大学大学院映像研究科<br>横浜市文化観光局<br>
+					お問い合わせ｜ media-practice[at]gsfnm.jp<br>※[at]→@に書き換えてください</p>
+				</div><!--section_contents-->
+
+			</div><!-- INFORMATION -->
+
+
+			<div class="bottom_section exhi" id="exhibitors">
+				<div class="section_contents sect_exhi">
+					<!-- <h1>EXHIBITORS</h1> -->
+					<h1>出展者情報</h1>
+					<div class="exhibitors-wrapper">
+							<h2>[ 修士二年 ]</h2>
+
+							<div class="exhi-row">
+								<div class="exhi">
+									<div class="exhi-img" id="asakura">
+										<a class="single_member"><img src="../img/exhi/m2/re/1_asakura_01.jpg"></a>
+									</div>
+									<p>朝倉千恵子</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="abe">
+										<a class="single_member"><img src="../img/exhi/m2/re/2_abe_01.jpg"></a>
+									</div>
+									<p>阿部真理亜</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="ikeda">
+										<a class="single_member"><img src="../img/exhi/m2/re/3_ikeda_01.jpg"></a>
+									</div>
+									<p>池田愛</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="isozaki">
+										<a class="single_member"><img src="../img/exhi/m2/re/4_isozaki_01.jpg"></a> 
+									</div>
+									<p>磯崎未菜</p>
+								</div>
+							</div><!-- exhi-row 1 -->
+
+							<div class="exhi-row">
+								<div class="exhi">
+									<div class="exhi-img" id="mikusato">
+										<a class="single_member"><img src="../img/exhi/m2/re/5_mikusato_01.jpg"></a>
+									</div>
+									<p>佐藤未来</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="yurisato">
+										<a class="single_member"><img src="../img/exhi/m2/re/6_yurisato_01.jpg"></a>
+									</div>
+									<p>佐藤友理</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="shibata">
+										<a class="single_member"><img src="../img/exhi/m2/re/7_shibata_01.jpg"></a>
+									</div>
+									<p>柴田悠</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="suzuki">
+										<a class="single_member"><img src="../img/exhi/m2/re/8_suzuki_01.jpg"></a>
+									</div>
+									<p>鈴木雄大</p>
+								</div>
+							</div><!-- exhi-row 2 -->
+
+							<div class="exhi-row">
+								<div class="exhi">
+									<div class="exhi-img" id="takamizawa">
+										<a class="single_member"><img src="../img/exhi/m2/re/9_takamizawa_01.jpg"></a>
+									</div>
+									<p>高見澤峻介</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="tsukiji">
+										<a class="single_member"><img src="../img/exhi/m2/re/10_tsukiji_01.jpg"></a>
+									</div>
+									<p>築地のはら</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="nakamura">
+										<a class="single_member"><img src="../img/exhi/m2/re/11_nakamura_01.jpg"></a>
+									</div>
+									<p>中村葉月</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="fuse">
+										<a class="single_member"><img src="../img/exhi/m2/re/12_fuse_01.jpg"></a>
+									</div>
+									<p>布施琳太郎</p>
+								</div>
+
+							</div><!-- exhi-row 3 -->
+
+							<div class="exhi-row">
+								<div class="exhi">
+									<div class="exhi-img" id="matsuo">
+										<a class="single_member"><img src="../img/exhi/m2/re/13_matsuo_01.jpg"></a>
+									</div>
+									<p>松尾若葉</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="moriya">
+										<a class="single_member"><img src="../img/exhi/m2/re/14_moriya_01.jpg"></a>
+									</div>
+									<p>守谷芽久生</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="blank">
+									</div>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="blank">
+									</div>
+								</div>
+
+							</div><!-- exhi-row 4 -->
+						</div><!-- exhibitors-wrapper m2 -->
+
+						<div class="exhibitors-wrapper">
+							<h2>[ 修士一年 ]</h2>
+
+							<div class="exhi-row">
+								<div class="exhi">
+									<div class="exhi-img" id="asao">
+										<a class="single_member"><img src="../img/exhi/m1/re/1_asao_01.jpg"></a>
+									</div>
+									<p>浅尾鷹哉</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="usami">
+										<a class="single_member"><img src="../img/exhi/m1/re/2_usami_01.jpg"></a>
+									</div>
+									<p>宇佐美奈緒</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="endo">
+										<a class="single_member"><img src="../img/exhi/m1/re/3_endo_01.jpg"></a>
+									</div>
+									<p>遠藤紘也</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="oikawa">
+										<a class="single_member"><img src="../img/exhi/m1/re/4_oikawa_01.jpg"></a>
+									</div>
+									<p>及川菜摘</p>
+								</div>
+							</div><!-- exhi-row 1 -->
+
+							<div class="exhi-row">
+								<div class="exhi">
+									<div class="exhi-img" id="okada">
+										<a class="single_member"><img src="../img/exhi/m1/re/5_okada_01.jpg"></a>
+									</div>
+									<p>岡田直己</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="kanai">
+										<a class="single_member"><img src="../img/exhi/m1/re/6_kanai_01.jpg"></a> 
+									</div>
+									<p>金井啓太</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="kobayashi">
+										<a class="single_member"><img src="../img/exhi/m1/re/7_kobayashi_01.jpg"></a>
+									</div>
+									<p>小林 颯</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="shikichi">
+										<a class="single_member"><img src="../img/exhi/m1/re/8_shikichi_01.jpg"></a>
+									</div>
+									<p>敷地 理</p>
+								</div>
+
+							</div><!-- exhi-row 2 -->
+
+							<div class="exhi-row">
+								<div class="exhi">
+									<div class="exhi-img" id="shimizu">
+										<a class="single_member"><img src="../img/exhi/m1/re/9_shimizu_01.jpg"></a>
+									</div>
+									<p>清水愛恵</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="calvero">
+										<a class="single_member"><img src="../img/exhi/m1/re/10_shin_01.png"></a> 
+									</div>
+									<p>申 晛湜</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="hashimoto">
+										<a class="single_member"><img src="../img/exhi/m1/re/11_hashimoto_01.jpg"></a> 
+									</div>
+									<p>橋本湧也</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="maeda">
+										<a class="single_member"><img src="../img/exhi/m1/re/12_maeda_01.jpg"></a>
+									</div>
+									<p>前田博雅</p>
+								</div>
+
+							</div><!-- exhi-row 3 -->
+
+							<div class="exhi-row">
+								<div class="exhi">
+									<div class="exhi-img" id="yoshida">
+										<a class="single_member"><img src="../img/exhi/m1/re/13_yoshida_01.jpg"></a>
+									</div>
+									<p>吉田真也</p>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="blank">
+									</div>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="blank">
+									</div>
+								</div>
+
+								<div class="exhi">
+									<div class="exhi-img" id="blank">
+									</div>
+								</div>
+
+							</div><!-- exhi-row 4 -->
+						</div> <!-- exhibitors-wrapper m1-->
+
+				</div><!--section_contents-->
+
+			</div><!-- EXHIBITORS -->
+
+			<div class="bottom_section access" id="access">
+
+				<div class="section_contents">
+					<!-- <h1>ACCESS</h1> -->
+					<h1>会場案内</h1>
+					<div class="access_wrapper">
+						<div id="access_text">
+
+							<div id="access_map">
+							</div>
+
+								<p><span style="font-weight: bolder;">東京藝術大学 横浜校地 元町中華街校舎</span><br>
+									〒231-0023 神奈川県横浜市中区山下町116<br>
+									みなとみらい線「元町・中華街駅」駅3番出口より徒歩約6分<br>
+									JR京浜東北線・根岸線「石川町」駅北口より徒歩約5分<br>
+								</p>
+							</div>
+						<!-- ここに埋め込み -->
+
+					</div><!-- access_wrapper-->
+
+				</div><!--section_contents-->
+
+			</div><!-- ACCESS -->
+
+		</div><!-- bottom_wrapper -->
+
+		<footer>
+			<div id="angle_up">
+				<a href="#"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a g>
+			</div>
+
+			<div id= "copyright">
+				©MEDIA PRACTICE, 2018-19
+			</div>
+
+			<div id="social">
+				<a class="twitter" href = "https://twitter.com/Geidai_newmedia" target="blank">
+					<i class="fa fa-twitter-square" aria-hidden="true"></i>
+				</a>
+
+				<a class="facebook" href = "https://www.facebook.com/Tokyo.Geidai.New.Media/" target="blank">
+					<i class="fa fa-facebook-square" aria-hidden="true"></i>
+				</a>
+
+				<a class="instagram" href = "https://instagram.com/geidainewmedia/" target="blank">
+					<i class="fa fa-instagram" aria-hidden="true"></i>
+				</a>
+			</div>
+
+		</footer>
+
+</div><!-- container -->
+
+<!-- google map api -->
+<script src="js/googlemap.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc8gCVOAIx9JIydja5akIDE4N4ouUsykU&callback=initMap" async defer></script>
+
+<!-- <script src="common/js/googlemap_geocoder.js"></script> -->
+
+<!-- menuaction -->
+<script src="js/menuAction.js"></script>
+
+<!-- modal -->
+<script src="js/modal.js"></script>
+
+</body>
+
+</html>
