@@ -3,20 +3,13 @@ document.write("<script type='text/javascript' src='modal.js'></script>");
 
 jQuery(document).ready(function() {
 
-  for(var i=0;i<900;i++){
-    var ret = ( '0000' + Math.round(i)).slice( -4 );
-    var filename = './images/anim_sell3/gateAnim_' + ret + '.gif';
-    $("<img>").attr('src',filename);
-    console.log("preload"+filename);
-  }
-
   var isPlaying=true;
   var isButtonScrolling=false;
   var exScrPoint=0;
   document.documentElement.scrollTop = 0;
 
   var width = $(window).width();
-var height = $(window).height(); // jQuery
+  var height = $(window).height();
 $('#Anim').css('width',width*0.99);
 $('#Anim').css('height',height*0.99);
 
@@ -24,8 +17,8 @@ $('.go_top').click(function(){
   console.log("go top");
   isButtonScrolling = true;
   $('.base-modal').fadeOut(500);
-  easing(document.documentElement.scrollTop/*後で*/,0,667,
-    function(value){(document.documentElement.scrollTop) = value;},
+  easing(document.documentElement.scrollTop || document.body.scrollTop,0,667,
+    function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
     function(){
       /*outlineをフェードイン*/
       if(!isPlaying){
@@ -65,8 +58,8 @@ $('.go_outline').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  easing(document.documentElement.scrollTop/*後で*/,1200,667,
-    function(value){(document.documentElement.scrollTop) = value;},
+  easing(document.documentElement.scrollTop || document.body.scrollTop,1200,667,
+    function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
     function(){
       $('#modal-about').fadeIn(500);
       isButtonScrolling = false;
@@ -91,8 +84,8 @@ $('#go_information').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  easing(document.documentElement.scrollTop/*後で*/,3200,667,
-    function(value){(document.documentElement.scrollTop) = value;},
+  easing(document.documentElement.scrollTop || document.body.scrollTop,3200,667,
+    function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
     function(){
       $('#modal-info').fadeIn(500);
       isButtonScrolling = false;
@@ -117,8 +110,8 @@ $('#go_exhibitors').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  easing(document.documentElement.scrollTop/*後で*/,5200,667,
-    function(value){(document.documentElement.scrollTop) = value;},
+  easing(document.documentElement.scrollTop || document.body.scrollTop,5200,667,
+    function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
     function(){
       /*outlineをフェードイン*/
       $('#modal-exhibitors').fadeIn(500);
@@ -144,8 +137,8 @@ $('.go_access').click(function(){
     videoControl("pauseVideo");
     isPlaying = false;
   }
-  easing(document.documentElement.scrollTop/*後で*/,7700,667,
-    function(value){(document.documentElement.scrollTop) = value;},
+  easing(document.documentElement.scrollTop || document.body.scrollTop,7700,667,
+    function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
     function(){
       $('#modal-access').fadeIn(500);
       isButtonScrolling = false;
@@ -296,13 +289,13 @@ function videoControl(action){
   var $playerWindow = $('#movie-content')[0].contentWindow;
   $playerWindow.postMessage('{"event":"command","func":"'+action+'","args":""}', '*');
 }
-
+ 
 function allow_move() {
-  $('#allow_img').animate({
-    marginTop: '-=10px'
-  }, 800).animate({
-    marginTop: '+=10px'
-  }, 800);
+    $('#allow_img').animate({
+        marginTop: '-=10px'
+    }, 800).animate({
+        marginTop: '+=10px'
+    }, 800);
     setTimeout('allow_move()', 1600); //アニメーションを繰り返す間隔
-  }
+}
 
