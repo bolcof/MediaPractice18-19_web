@@ -3,6 +3,13 @@ document.write("<script type='text/javascript' src='modal.js'></script>");
 
 jQuery(document).ready(function() {
 
+  for(var i=0;i<900;i++){
+    var ret = ( '0000' + Math.round(i)).slice( -4 );
+    var filename = './images/anim_sell3/gateAnim_' + ret + '.gif';
+    $("<img>").attr('src',filename);
+    console.log("preload"+filename);
+  }
+
   var isPlaying=true;
   var isButtonScrolling=false;
   var exScrPoint=0;
@@ -182,7 +189,7 @@ window.onscroll=function(){
     scrollTop=9900;
   }
   var ret = ( '0000' + Math.round(scrollTop/11)).slice( -4 );
-  var filename = './images/anim_sell/gateAnim_' + ret + '.png';
+  var filename = './images/anim_sell3/gateAnim_' + ret + '.gif';
   $('#Anim').attr('src',filename);
   if(!isButtonScrolling){
 
@@ -289,13 +296,13 @@ function videoControl(action){
   var $playerWindow = $('#movie-content')[0].contentWindow;
   $playerWindow.postMessage('{"event":"command","func":"'+action+'","args":""}', '*');
 }
- 
+
 function allow_move() {
-    $('#allow_img').animate({
-        marginTop: '-=10px'
-    }, 800).animate({
-        marginTop: '+=10px'
-    }, 800);
+  $('#allow_img').animate({
+    marginTop: '-=10px'
+  }, 800).animate({
+    marginTop: '+=10px'
+  }, 800);
     setTimeout('allow_move()', 1600); //アニメーションを繰り返す間隔
-}
+  }
 
