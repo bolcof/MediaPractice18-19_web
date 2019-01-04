@@ -53,6 +53,19 @@ header #logo2 img {
 	z-index: 9999;
 }
 
+header #allow01 {
+	position: absolute;
+	bottom: 22.5px;
+	left: 50%;
+	transform: translateX(-58%);
+}
+
+header #allow01 img {
+	display: inline-block;
+	height: 60px;
+	z-index: 9999;
+}
+
 header ul{
 	float: right;
 	position: absolute;
