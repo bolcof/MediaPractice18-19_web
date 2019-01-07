@@ -10,165 +10,172 @@ jQuery(document).ready(function() {
 
   var width = $(window).width();
   var height = $(window).height();
-$('#Anim').css('width',width*0.99);
-$('#Anim').css('height',height*0.99);
+  $('#Anim').css('width',width*0.99);
+  $('#Anim').css('height',height*0.99);
 
-$('.go_top').click(function(){
-  console.log("go top");
-  isButtonScrolling = true;
-  $('.base-modal').fadeOut(500);
-  easing(document.documentElement.scrollTop || document.body.scrollTop,0,667,
-    function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
-    function(){
-      /*outlineをフェードイン*/
-      if(!isPlaying){
-        easing(1.0,0.15,333,
-          function(opacity){
-            $("#Anim")
-            .css("opacity",opacity)
-          },
-          function(){
-            $('#movie').fadeIn();
+  for(var i=0;i<901;i++){
+    var ret = ( '0000' + i).slice( -4 );
+    var filename = './images/anim_sell4/HD_gateAnim_' + ret + '.png';
+    console.log("preload"+filename);
+    $("<img>").attr("src", filename); 
+  }
+
+  $('.go_top').click(function(){
+    console.log("go top");
+    isButtonScrolling = true;
+    $('.base-modal').fadeOut(500);
+    easing(document.documentElement.scrollTop || document.body.scrollTop,0,667,
+      function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
+      function(){
+        /*outlineをフェードイン*/
+        if(!isPlaying){
+          easing(1.0,0.15,333,
+            function(opacity){
+              $("#Anim")
+              .css("opacity",opacity)
+            },
+            function(){
+              $('#movie').fadeIn();
             // videoControl("playVideo");
             // $('#movie-content').seekTo(0,true);
           });
-        $('#allow_img').hide();
-        isPlaying=true;
+          $('#allow_img').hide();
+          isPlaying=true;
+          isButtonScrolling = false;
+        }
+      });
+  });
+
+  $('.go_outline').click(function(){
+    console.log("go outline");
+    isButtonScrolling = true;
+    $('#allow_img').hide();
+    $('#modal-info').fadeOut(500);
+    $('#modal-exhibitors').fadeOut(500);
+    $('#modal-access').fadeOut(500);
+    if(isPlaying){
+      easing(0.15,1.0,333,
+        function(opacity){
+          $("#Anim")
+          .css("opacity",opacity)
+        },
+        function(){
+        });
+      $('#movie').fadeOut();
+      videoControl("pauseVideo");
+      isPlaying = false;
+    }
+    easing(document.documentElement.scrollTop || document.body.scrollTop,1200,667,
+      function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
+      function(){
+        $('#modal-about').fadeIn(500);
         isButtonScrolling = false;
-      }
-    });
-});
-
-$('.go_outline').click(function(){
-  console.log("go outline");
-  isButtonScrolling = true;
-  $('#allow_img').hide();
-  $('#modal-info').fadeOut(500);
-  $('#modal-exhibitors').fadeOut(500);
-  $('#modal-access').fadeOut(500);
-  if(isPlaying){
-    easing(0.15,1.0,333,
-      function(opacity){
-        $("#Anim")
-        .css("opacity",opacity)
-      },
-      function(){
       });
-    $('#movie').fadeOut();
-    videoControl("pauseVideo");
-    isPlaying = false;
-  }
-  easing(document.documentElement.scrollTop || document.body.scrollTop,1200,667,
-    function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
-    function(){
-      $('#modal-about').fadeIn(500);
-      isButtonScrolling = false;
-    });
-});
+  });
 
-$('#go_information').click(function(){
-  console.log("go information");
-  isButtonScrolling = true;
-  $('#modal-about').fadeOut(500);
-  $('#modal-exhibitors').fadeOut(500);
-  $('#modal-access').fadeOut(500);
-  if(isPlaying){
-    easing(0.15,1.0,333,
-      function(opacity){
-        $("#Anim")
-        .css("opacity",opacity)
-      },
+  $('#go_information').click(function(){
+    console.log("go information");
+    isButtonScrolling = true;
+    $('#modal-about').fadeOut(500);
+    $('#modal-exhibitors').fadeOut(500);
+    $('#modal-access').fadeOut(500);
+    if(isPlaying){
+      easing(0.15,1.0,333,
+        function(opacity){
+          $("#Anim")
+          .css("opacity",opacity)
+        },
+        function(){
+        });
+      $('#movie').fadeOut();
+      videoControl("pauseVideo");
+      isPlaying = false;
+    }
+    easing(document.documentElement.scrollTop || document.body.scrollTop,3200,667,
+      function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
       function(){
+        $('#modal-info').fadeIn(500);
+        isButtonScrolling = false;
       });
-    $('#movie').fadeOut();
-    videoControl("pauseVideo");
-    isPlaying = false;
-  }
-  easing(document.documentElement.scrollTop || document.body.scrollTop,3200,667,
-    function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
-    function(){
-      $('#modal-info').fadeIn(500);
-      isButtonScrolling = false;
-    });
-});
+  });
 
-$('#go_exhibitors').click(function(){
-  console.log("go exhibitors");
-  isButtonScrolling = true;
-  $('#modal-about').fadeOut(500);
-  $('#modal-info').fadeOut(500);
-  $('#modal-access').fadeOut(500);
-  if(isPlaying){
-    easing(0.15,1.0,333,
-      function(opacity){
-        $("#Anim")
-        .css("opacity",opacity)
-      },
+  $('#go_exhibitors').click(function(){
+    console.log("go exhibitors");
+    isButtonScrolling = true;
+    $('#modal-about').fadeOut(500);
+    $('#modal-info').fadeOut(500);
+    $('#modal-access').fadeOut(500);
+    if(isPlaying){
+      easing(0.15,1.0,333,
+        function(opacity){
+          $("#Anim")
+          .css("opacity",opacity)
+        },
+        function(){
+        });
+      $('#movie').fadeOut();
+      videoControl("pauseVideo");
+      isPlaying = false;
+    }
+    easing(document.documentElement.scrollTop || document.body.scrollTop,5200,667,
+      function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
       function(){
+        /*outlineをフェードイン*/
+        $('#modal-exhibitors').fadeIn(500);
+        isButtonScrolling = false;
       });
-    $('#movie').fadeOut();
-    videoControl("pauseVideo");
-    isPlaying = false;
-  }
-  easing(document.documentElement.scrollTop || document.body.scrollTop,5200,667,
-    function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
-    function(){
-      /*outlineをフェードイン*/
-      $('#modal-exhibitors').fadeIn(500);
-      isButtonScrolling = false;
-    });
-});
+  });
 
-$('.go_access').click(function(){
-  console.log("go access");
-  isButtonScrolling = true;
-  $('#modal-about').fadeOut(500);
-  $('#modal-info').fadeOut(500);
-  $('#modal-exhibitors').fadeOut(500);
-  if(isPlaying){
-    easing(0.15,1.0,333,
-      function(opacity){
-        $("#Anim")
-        .css("opacity",opacity)
-      },
+  $('.go_access').click(function(){
+    console.log("go access");
+    isButtonScrolling = true;
+    $('#modal-about').fadeOut(500);
+    $('#modal-info').fadeOut(500);
+    $('#modal-exhibitors').fadeOut(500);
+    if(isPlaying){
+      easing(0.15,1.0,333,
+        function(opacity){
+          $("#Anim")
+          .css("opacity",opacity)
+        },
+        function(){
+        });
+      $('#movie').fadeOut();
+      videoControl("pauseVideo");
+      isPlaying = false;
+    }
+    easing(document.documentElement.scrollTop || document.body.scrollTop,7700,667,
+      function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
       function(){
+        $('#modal-access').fadeIn(500);
+        isButtonScrolling = false;
       });
-    $('#movie').fadeOut();
-    videoControl("pauseVideo");
-    isPlaying = false;
-  }
-  easing(document.documentElement.scrollTop || document.body.scrollTop,7700,667,
-    function(value){document.documentElement.scrollTop = document.body.scrollTop = value;},
-    function(){
-      $('#modal-access').fadeIn(500);
-      isButtonScrolling = false;
-    });
-});
+  });
 
-$(window).keydown(function(){
-  var str = event.keyCode;
-});
-$(window).click(function(){
+  $(window).keydown(function(){
+    var str = event.keyCode;
+  });
+  $(window).click(function(){
 
-  if(isPlaying){
-    easing(0.15,1.0,333,
-      function(opacity){
-        $("#Anim")
-        .css("opacity",opacity)
-      },
-      function(){
-        $('#movie').fadeOut(667);
-        $('#allow_wrapper').show();
-        $('#allow_img').css("display", "block");
-        setTimeout('allow_move()');
-      });
-    videoControl("pauseVideo");
-    isPlaying = false;
-  }
-});
+    if(isPlaying){
+      easing(0.15,1.0,333,
+        function(opacity){
+          $("#Anim")
+          .css("opacity",opacity)
+        },
+        function(){
+          $('#movie').fadeOut(667);
+          $('#allow_wrapper').show();
+          $('#allow_img').css("display", "block");
+          setTimeout('allow_move()');
+        });
+      videoControl("pauseVideo");
+      isPlaying = false;
+    }
+  });
 
-window.onscroll=function(){
-  var scrollTop =
+  window.onscroll=function(){
+    var scrollTop =
   document.documentElement.scrollTop || // IE、Firefox、Opera
   document.body.scrollTop;
 
@@ -182,7 +189,7 @@ window.onscroll=function(){
     scrollTop=9900;
   }
   var ret = ( '0000' + Math.round(scrollTop/11)).slice( -4 );
-  var filename = './images/anim_sell3/gateAnim_' + ret + '.gif';
+  var filename = './images/anim_sell4/HD_gateAnim_' + ret + '.png';
   $('#Anim').attr('src',filename);
   if(!isButtonScrolling){
 
@@ -289,13 +296,13 @@ function videoControl(action){
   var $playerWindow = $('#movie-content')[0].contentWindow;
   $playerWindow.postMessage('{"event":"command","func":"'+action+'","args":""}', '*');
 }
- 
+
 function allow_move() {
-    $('#allow_img').animate({
-        marginTop: '-=10px'
-    }, 800).animate({
-        marginTop: '+=10px'
-    }, 800);
+  $('#allow_img').animate({
+    marginTop: '-=10px'
+  }, 800).animate({
+    marginTop: '+=10px'
+  }, 800);
     setTimeout('allow_move()', 1600); //アニメーションを繰り返す間隔
-}
+  }
 
