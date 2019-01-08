@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
 
   for(var i=0;i<901;i++){
     var ret = ( '0000' + i).slice( -4 );
-    var filename = './images/anim_sell4/HD_gateAnim_' + ret + '.png';
+    var filename = './images/anim_sell5/gateAnim_' + ret + '.gif';
     console.log("preload"+filename);
     $("<img>").attr("src", filename); 
   }
@@ -189,18 +189,18 @@ jQuery(document).ready(function() {
     scrollTop=9900;
   }
   var ret = ( '0000' + Math.round(scrollTop/11)).slice( -4 );
-  var filename = './images/anim_sell4/HD_gateAnim_' + ret + '.png';
+  var filename = './images/anim_sell5/gateAnim_' + ret + '.gif';
   $('#Anim').attr('src',filename);
   if(!isButtonScrolling){
 
     if(exScrPoint<=200){
-      if(scrollTop>=200){
+      if(scrollTop>200){
         $('#allow_img').fadeOut(333);
       }
     }
 
     if(exScrPoint<=250){
-      if(scrollTop>=250){
+      if(scrollTop>250){
         easing(0.15,1.0,333,
           function(opacity){
             $("#Anim")
@@ -213,25 +213,25 @@ jQuery(document).ready(function() {
         isPlaying = false;
       }
     }else if(exScrPoint>=900 && exScrPoint<=2300){
-      if(scrollTop<=900 || scrollTop>=2300){
+      if(scrollTop<900 || scrollTop>2300){
         $('#modal-about').fadeOut(500);
       }
     }else if(exScrPoint>=2900 && exScrPoint<=4300){
-      if(scrollTop<=2900 || scrollTop>=4300){
+      if(scrollTop<2900 || scrollTop>4300){
         $('#modal-info').fadeOut(500);
       }
     }else if(exScrPoint>=4900 && exScrPoint<=6800){
-      if(scrollTop<=4900 || scrollTop>=6800){
+      if(scrollTop<4900 || scrollTop>6800){
         $('#modal-exhibitors').fadeOut(500);
       }
     }else if(exScrPoint>=7400 && exScrPoint<=8800){
-      if(scrollTop<=7400 || scrollTop>=8800){
+      if(scrollTop<7400 || scrollTop>8800){
         $('#modal-access').fadeOut(500);
       }
     }
 
     if(exScrPoint>=250){
-      if(scrollTop<=250){
+      if(scrollTop<250){
         easing(1.0,0.15,333,
           function(opacity){
             $("#Anim")
@@ -246,22 +246,22 @@ jQuery(document).ready(function() {
       }
     }
     if(exScrPoint<=900 || exScrPoint>=2300){
-      if(scrollTop>=900 && scrollTop<=2300){
+      if(scrollTop>900 && scrollTop<2300){
         $('#modal-about').fadeIn(500);
       }
     }
     if(exScrPoint<=2900 || exScrPoint>=4300){
-      if(scrollTop>=2900 && scrollTop<=4300){
+      if(scrollTop>2900 && scrollTop<4300){
         $('#modal-info').fadeIn(500);
       }
     }
     if(exScrPoint<=4900 || exScrPoint>=6800){
-      if(scrollTop>=4900 && scrollTop<=6800){
+      if(scrollTop>4900 && scrollTop<6800){
         $('#modal-exhibitors').fadeIn(500);
       }
     }
     if(exScrPoint<=7400 || exScrPoint>=8800){
-      if(scrollTop>=7400 && scrollTop<=8800){
+      if(scrollTop>7400 && scrollTop<8800){
         $('#modal-access').fadeIn(500);
       }
     }
